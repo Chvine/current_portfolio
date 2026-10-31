@@ -55,47 +55,6 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: Project[] = [
   {
-    id: "snapzone",
-    title: "Snapzone",
-    tagline: "Photobooth Reservation & Business Management Platform",
-    category: "Full-Stack Web",
-    type: "Academic Project",
-    timeline: "February – March 2026",
-    featured: true,
-    description:
-      "End-to-end event photobooth booking and business management platform featuring client reservation workflows, real-time messaging, and a companion mobile app.",
-    longDescription:
-      "Snapzone is an all-in-one reservation and event management system designed for photobooth business operations. It combines a responsive client booking portal, dynamic surcharge calculation engine, real-time client-to-owner chat via Ratchet WebSockets, administrative calendar dashboards for schedule conflict prevention, and a cross-platform companion mobile application developed in Flutter and Dart.",
-    features: [
-      "Guest booking engine with dynamic package selection and automated surcharges for corporate, big event, and out-of-town venues",
-      "Interactive owner dashboard equipped with schedule calendar, booking approvals, payment verification, and revenue reports",
-      "Real-time client-to-owner chat system engineered with Ratchet WebSockets and MySQL message persistence",
-      "Cross-platform companion mobile app built in Flutter and Dart with custom animations and WebView integration",
-    ],
-    technologies: ["PHP", "MySQL", "Flutter", "Dart", "Tailwind CSS", "Ratchet WebSocket", "REST APIs"],
-    metrics: "Full-stack reservation portal with real-time WebSocket chat & Flutter mobile app",
-  },
-  {
-    id: "hotel-billing",
-    title: "Hotel Billing System",
-    tagline: "Front-Desk, Cashier & Restaurant System with Guest-Facing Portal",
-    category: "Full-Stack Web",
-    type: "Academic Project",
-    timeline: "2026",
-    featured: true,
-    description:
-      "Hotel front-desk, cashier and restaurant system with a guest-facing portal, QR-code passes, and multi-channel payment integrations.",
-    longDescription:
-      "Hotel Billing System is an integrated hospitality and restaurant management platform engineered with Next.js, PHP, MySQL, and WebSockets. It streamlines operational workflows between hotel front-desk staff, dining cashiers, and guests through automated QR-code passes, real-time folio bill calculation, role-based access control, and payment processing.",
-    features: [
-      "QR-code check-in pass that opens a private guest portal showing the live folio bill, dining orders and room service requests",
-      "Cashier workflow with approvals, VAT, discount policies, group check-in, and cash, card, GCash, Maya and QR Ph payments",
-      "Role-based permissions, audit trail and realtime staff notifications",
-    ],
-    technologies: ["Next.js", "PHP", "MySQL", "WebSocket", "QR Codes", "Tailwind CSS"],
-    metrics: "Real-time guest folio & cashier workflow engine",
-  },
-  {
     id: "cozier",
     title: "Cozier",
     tagline: "Minimalist E-Commerce Platform & Order Tracking Dashboard",
@@ -142,26 +101,6 @@ export const PROJECTS: Project[] = [
     metrics: "Instantaneous client-side cashiering and receipt engine",
   },
   {
-    id: "j-and-j-sublimation",
-    title: "J and J Full Sublimation Printing Ordering System",
-    tagline: "Apparel Ordering System & Production Workflow Tracking",
-    category: "Systems & Desktop",
-    type: "Academic Project",
-    timeline: "2025 – 2026",
-    featured: true,
-    description:
-      "Ordering system for a full sublimation apparel printing business that digitizes custom order intake and production tracking.",
-    longDescription:
-      "Engineered for J and J Full Sublimation Printing to replace manual paperwork with an end-to-end digital ordering and tracking workflow. Captures complex garment types, sizing matrices, print specifications, and monitors active jobs from intake through printing, pressing, and final release.",
-    features: [
-      "Online ordering of custom sublimated apparel, capturing garment type, sizes, quantities and design specifications",
-      "Order status tracking from submission through production to release for customers and staff",
-      "Administrative module for managing orders, customer records and print production workflow",
-    ],
-    technologies: ["Java", "Java GUI", "Systems Architecture", "File/Database Management"],
-    metrics: "Digitized full-lifecycle apparel order intake & tracking",
-  },
-  {
     id: "barangay-canitoan",
     title: "Barangay Canitoan Official Portal",
     tagline: "Civic Public Information Platform & Service Hub",
@@ -185,23 +124,105 @@ export const PROJECTS: Project[] = [
     metrics: "8 complete modules deployed live via Cloudflare Pages",
   },
   {
-    id: "jungle-slot-machine",
-    title: "Jungle Slot Machine",
-    tagline: "Interactive Game Application with Reel-Spinning Gameplay",
+    id: "math-for-kids",
+    title: "Math for Kids",
+    tagline: "Interactive Arithmetic Learning Web Platform",
     category: "Interactive & Logic",
-    type: "Game Application",
-    timeline: "2024",
+    type: "Individual Project",
+    timeline: "July 2026",
     description:
-      "Jungle-themed slot machine game with an interactive, easy-to-use gameplay interface.",
+      "A playful, responsive web educational tool designed to help elementary students build confidence in foundational math through visual exercises.",
     longDescription:
-      "An interactive gaming application featuring responsive reel-spinning mechanics, payout algorithms, and engaging jungle visual themes with intuitive user controls.",
+      "Built with clean HTML, CSS animations, and vanilla JavaScript, Math for Kids delivers instant gratification through colorful visual rewards, arithmetic problem generators, and error-resilient exercises.",
     features: [
-      "Interactive reel-spinning gameplay with jungle-themed visuals",
-      "Dynamic bet scaling and reward payout calculations",
-      "Responsive, easy-to-use interface optimized for engagement",
+      "Randomized arithmetic problem generators for addition, subtraction, and multiplication",
+      "Immediate positive feedback loops with responsive CSS animations",
+      "Kid-friendly UI with high contrast and intuitive touch targets",
     ],
-    technologies: ["JavaScript / Python", "Game Logic Design", "Interactive UI"],
-    metrics: "Interactive reel-spinning gameplay with jungle visuals",
+    technologies: ["JavaScript", "HTML5", "CSS3 Keyframe Animations"],
+    githubUrl: "https://github.com/Chvine/math-for-kids",
+    metrics: "Interactive arithmetic generation with instant feedback",
+  },
+  {
+    id: "snapzone",
+    title: "Snapzone",
+    tagline: "Photobooth Reservation & Business Management Platform",
+    category: "Full-Stack Web",
+    type: "Academic Project",
+    timeline: "February – March 2026",
+    featured: true,
+    description:
+      "End-to-end event photobooth booking and business management platform featuring client reservation workflows, real-time messaging, and a companion mobile app.",
+    longDescription:
+      "Snapzone is an all-in-one reservation and event management system designed for photobooth business operations. It combines a responsive client booking portal, dynamic surcharge calculation engine, real-time client-to-owner chat via Ratchet WebSockets, administrative calendar dashboards for schedule conflict prevention, and a cross-platform companion mobile application developed in Flutter and Dart.",
+    features: [
+      "Guest booking engine with dynamic package selection and automated surcharges for corporate, big event, and out-of-town venues",
+      "Interactive owner dashboard equipped with schedule calendar, booking approvals, payment verification, and revenue reports",
+      "Real-time client-to-owner chat system engineered with Ratchet WebSockets and MySQL message persistence",
+      "Cross-platform companion mobile app built in Flutter and Dart with custom animations and WebView integration",
+    ],
+    technologies: ["PHP", "MySQL", "Flutter", "Dart", "Tailwind CSS", "Ratchet WebSocket", "REST APIs"],
+    metrics: "Full-stack reservation portal with real-time WebSocket chat & Flutter mobile app",
+  },
+  {
+    id: "hotel-billing",
+    title: "Hotel Billing System",
+    tagline: "Front-Desk, Cashier & Restaurant System with Guest-Facing Portal",
+    category: "Full-Stack Web",
+    type: "Academic Project",
+    timeline: "2026",
+    featured: true,
+    description:
+      "Hotel front-desk, cashier and restaurant system with a guest-facing portal, QR-code passes, and multi-channel payment integrations.",
+    longDescription:
+      "Hotel Billing System is an integrated hospitality and restaurant management platform engineered with Next.js, PHP, MySQL, and WebSockets. It streamlines operational workflows between hotel front-desk staff, dining cashiers, and guests through automated QR-code passes, real-time folio bill calculation, role-based access control, and payment processing.",
+    features: [
+      "QR-code check-in pass that opens a private guest portal showing the live folio bill, dining orders and room service requests",
+      "Cashier workflow with approvals, VAT, discount policies, group check-in, and cash, card, GCash, Maya and QR Ph payments",
+      "Role-based permissions, audit trail and realtime staff notifications",
+    ],
+    technologies: ["Next.js", "PHP", "MySQL", "WebSocket", "QR Codes", "Tailwind CSS"],
+    metrics: "Real-time guest folio & cashier workflow engine",
+  },
+  {
+    id: "j-and-j-sublimation",
+    title: "J and J Full Sublimation Printing Ordering System",
+    tagline: "Apparel Ordering System & Production Workflow Tracking",
+    category: "Systems & Desktop",
+    type: "Academic Project",
+    timeline: "2025 – 2026",
+    featured: true,
+    description:
+      "Ordering system for a full sublimation apparel printing business that digitizes custom order intake and production tracking.",
+    longDescription:
+      "Engineered for J and J Full Sublimation Printing to replace manual paperwork with an end-to-end digital ordering and tracking workflow. Captures complex garment types, sizing matrices, print specifications, and monitors active jobs from intake through printing, pressing, and final release.",
+    features: [
+      "Online ordering of custom sublimated apparel, capturing garment type, sizes, quantities and design specifications",
+      "Order status tracking from submission through production to release for customers and staff",
+      "Administrative module for managing orders, customer records and print production workflow",
+    ],
+    technologies: ["Java", "Java GUI", "Systems Architecture", "File/Database Management"],
+    metrics: "Digitized full-lifecycle apparel order intake & tracking",
+  },
+  {
+    id: "language-learning",
+    title: "Language Learning Web",
+    tagline: "Modular Language Study & Flashcard Drill Platform",
+    category: "Full-Stack Web",
+    type: "Individual Project",
+    timeline: "April 2025",
+    description:
+      "An accessible educational web application providing structured vocabulary units, phonetic flashcards, and self-assessment modules.",
+    longDescription:
+      "An educational web application focusing on clean layout hierarchy, intuitive step-by-step lesson navigation, and interactive knowledge retention drills with flashcards.",
+    features: [
+      "Structured lesson modules categorized by topic, grammar fundamentals, and proficiency level",
+      "Interactive flashcard flip animations for active recall and vocabulary retention",
+      "Progress tracking within the learning session with an intuitive, responsive interface",
+    ],
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive UI", "Git"],
+    githubUrl: "https://github.com/Chvine/Language-Learning-Web",
+    metrics: "Lightweight educational web application",
   },
   {
     id: "healthcare-system",
@@ -222,6 +243,25 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ["Python", "Data Structures", "CLI / Terminal UI", "Modular Systems"],
     metrics: "Zero-conflict scheduling algorithm in Python",
+  },
+  {
+    id: "jungle-slot-machine",
+    title: "Jungle Slot Machine",
+    tagline: "Interactive Game Application with Reel-Spinning Gameplay",
+    category: "Interactive & Logic",
+    type: "Game Application",
+    timeline: "2024",
+    description:
+      "Jungle-themed slot machine game with an interactive, easy-to-use gameplay interface.",
+    longDescription:
+      "An interactive gaming application featuring responsive reel-spinning mechanics, payout algorithms, and engaging jungle visual themes with intuitive user controls.",
+    features: [
+      "Interactive reel-spinning gameplay with jungle-themed visuals",
+      "Dynamic bet scaling and reward payout calculations",
+      "Responsive, easy-to-use interface optimized for engagement",
+    ],
+    technologies: ["JavaScript / Python", "Game Logic Design", "Interactive UI"],
+    metrics: "Interactive reel-spinning gameplay with jungle visuals",
   },
   {
     id: "lending-system",
@@ -262,46 +302,6 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ["Python", "Algorithms", "Game Logic Design", "Terminal UX"],
     metrics: "Multi-tiered progressive riddle engine",
-  },
-  {
-    id: "math-for-kids",
-    title: "Math for Kids",
-    tagline: "Interactive Arithmetic Learning Web Platform",
-    category: "Interactive & Logic",
-    type: "Individual Project",
-    timeline: "July 2026",
-    description:
-      "A playful, responsive web educational tool designed to help elementary students build confidence in foundational math through visual exercises.",
-    longDescription:
-      "Built with clean HTML, CSS animations, and vanilla JavaScript, Math for Kids delivers instant gratification through colorful visual rewards, arithmetic problem generators, and error-resilient exercises.",
-    features: [
-      "Randomized arithmetic problem generators for addition, subtraction, and multiplication",
-      "Immediate positive feedback loops with responsive CSS animations",
-      "Kid-friendly UI with high contrast and intuitive touch targets",
-    ],
-    technologies: ["JavaScript", "HTML5", "CSS3 Keyframe Animations"],
-    githubUrl: "https://github.com/Chvine/math-for-kids",
-    metrics: "Interactive arithmetic generation with instant feedback",
-  },
-  {
-    id: "language-learning",
-    title: "Language Learning Web",
-    tagline: "Modular Language Study & Drill Platform",
-    category: "Full-Stack Web",
-    type: "Individual Project",
-    timeline: "April 2025",
-    description:
-      "An accessible educational web application providing structured vocabulary units, phonetic flashcards, and self-assessment modules.",
-    longDescription:
-      "An early web development exploration into educational interfaces, focusing on clean layout hierarchy, intuitive step-by-step lesson navigation, and interactive knowledge retention drills.",
-    features: [
-      "Structured lesson modules categorized by topic and proficiency level",
-      "Interactive flashcard flip animations for vocabulary retention",
-      "Progress tracking within the current learning session",
-    ],
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubUrl: "https://github.com/Chvine/Language-Learning-Web",
-    metrics: "Lightweight educational web application",
   },
 ];
 
