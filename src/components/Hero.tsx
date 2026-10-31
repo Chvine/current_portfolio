@@ -203,7 +203,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
           </div>
           <div className="text-sm font-semibold tracking-wider text-white uppercase flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[rgb(165,56,96)]" />
-            <span>&quot;BUILDING IDEAS INTO DIGITAL EXPERIENCES.&quot;</span>
+            <span>BUILDING IDEAS INTO DIGITAL EXPERIENCES.</span>
           </div>
         </div>
       </div>
