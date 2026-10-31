@@ -55,6 +55,27 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "snapzone",
+    title: "Snapzone",
+    tagline: "Photobooth Reservation & Business Management Platform",
+    category: "Full-Stack Web",
+    type: "Academic Project",
+    timeline: "February – March 2026",
+    featured: true,
+    description:
+      "End-to-end event photobooth booking and business management platform featuring client reservation workflows, real-time messaging, and a companion mobile app.",
+    longDescription:
+      "Snapzone is an all-in-one reservation and event management system designed for photobooth business operations. It combines a responsive client booking portal, dynamic surcharge calculation engine, real-time client-to-owner chat via Ratchet WebSockets, administrative calendar dashboards for schedule conflict prevention, and a cross-platform companion mobile application developed in Flutter and Dart.",
+    features: [
+      "Guest booking engine with dynamic package selection and automated surcharges for corporate, big event, and out-of-town venues",
+      "Interactive owner dashboard equipped with schedule calendar, booking approvals, payment verification, and revenue reports",
+      "Real-time client-to-owner chat system engineered with Ratchet WebSockets and MySQL message persistence",
+      "Cross-platform companion mobile app built in Flutter and Dart with custom animations and WebView integration",
+    ],
+    technologies: ["PHP", "MySQL", "Flutter", "Dart", "Tailwind CSS", "Ratchet WebSocket", "REST APIs"],
+    metrics: "Full-stack reservation portal with real-time WebSocket chat & Flutter mobile app",
+  },
+  {
     id: "hotel-billing",
     title: "Hotel Billing System",
     tagline: "Front-Desk, Cashier & Restaurant System with Guest-Facing Portal",
@@ -292,7 +313,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "Python", level: "Intermediate", verifiedIn: "Braingle Game, Healthcare App" },
       { name: "Java", level: "Intermediate", verifiedIn: "Lending System, Apparel System (GUI)" },
       { name: "JavaScript (ES6+)", level: "Advanced", verifiedIn: "Cozier SPA, Tindahan ni Ante POS, Math for Kids" },
-      { name: "PHP", level: "Academic", verifiedIn: "Advance Programming coursework" },
+      { name: "PHP", level: "Academic", verifiedIn: "Snapzone & Hotel Billing Systems" },
+      { name: "Dart", level: "Intermediate", verifiedIn: "Snapzone companion mobile application" },
       { name: "HTML5", level: "Advanced", verifiedIn: "Barangay Canitoan, Cozier, POS, Portfolios" },
       { name: "CSS3 / Modern CSS", level: "Advanced", verifiedIn: "Flexbox, Grid, Glassmorphism, Animations" },
     ],
@@ -302,6 +324,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: "Creating responsive, accessible, and high-impact digital interfaces.",
     skills: [
       { name: "React & Next.js", level: "Intermediate", verifiedIn: "Modern web application development & portfolio" },
+      { name: "Flutter", level: "Intermediate", verifiedIn: "Snapzone cross-platform mobile application" },
       { name: "Bootstrap", level: "Intermediate", verifiedIn: "Responsive and user-friendly web designs" },
       { name: "Responsive Web Design", level: "Advanced", verifiedIn: "Mobile-first layouts across all web projects" },
       { name: "Tailwind CSS", level: "Intermediate", verifiedIn: "Modern portfolio & utility-first workflows" },

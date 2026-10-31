@@ -170,11 +170,11 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[10px]">
               <div>
                 <span className="font-bold text-white block">Programming & Core Tech:</span>
-                <span className="text-neutral-300">Python, Java, JavaScript (ES6+), PHP, HTML5, CSS3</span>
+                <span className="text-neutral-300">Python, Java, JavaScript (ES6+), PHP, Dart, HTML5, CSS3</span>
               </div>
               <div>
-                <span className="font-bold text-white block">Frontend & Web Frameworks:</span>
-                <span className="text-neutral-300">Next.js, React, Tailwind CSS, Bootstrap, Responsive Layouts, Glassmorphism UI</span>
+                <span className="font-bold text-white block">Frontend & Mobile Frameworks:</span>
+                <span className="text-neutral-300">Next.js, React, Flutter, Tailwind CSS, Bootstrap, Responsive Layouts, Glassmorphism UI</span>
               </div>
               <div>
                 <span className="font-bold text-white block">Systems & Architecture:</span>
