@@ -8,6 +8,11 @@
   --color-border: #292929;
   --color-card: #0D0D0D;
   --color-card-hover: #151515;
+  --color-accent: rgb(165, 56, 96);
+  --color-accent-light: rgb(194, 76, 120);
+  --color-accent-dark: rgb(130, 42, 75);
+  --color-accent-muted: rgba(165, 56, 96, 0.15);
+  --color-accent-border: rgba(165, 56, 96, 0.35);
 
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -26,15 +31,16 @@
 ::-webkit-scrollbar-thumb {
   background: #292929;
   border-radius: 3px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: rgb(165, 56, 96);
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(165, 56, 96, 0.4);
   color: #fff;
 }
 
@@ -172,12 +178,33 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: #fff;
+  background: rgb(165, 56, 96);
   transition: width 0.3s ease;
 }
 
 .link-underline:hover::after {
   width: 100%;
+}
+
+/* Accent utilities */
+.text-accent {
+  color: rgb(165, 56, 96);
+}
+
+.border-accent {
+  border-color: rgb(165, 56, 96);
+}
+
+.bg-accent {
+  background-color: rgb(165, 56, 96);
+}
+
+.accent-glow {
+  box-shadow: 0 0 20px -3px rgba(165, 56, 96, 0.45);
+}
+
+.accent-glow-subtle {
+  box-shadow: 0 0 35px -5px rgba(165, 56, 96, 0.25);
 }
 
 /* Card shine effect */
