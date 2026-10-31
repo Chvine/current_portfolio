@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   tagline: string;
   category: "Full-Stack Web" | "Systems & Desktop" | "Civic & Community" | "Interactive & Logic";
-  type: "Individual Project" | "Group Project" | "Mini-Project";
+  type: "Individual Project" | "Group Project" | "Mini-Project" | "Academic Project" | "Game Application";
   timeline: string;
   description: string;
   longDescription: string;
@@ -55,6 +55,26 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "hotel-billing",
+    title: "Hotel Billing System",
+    tagline: "Front-Desk, Cashier & Restaurant System with Guest-Facing Portal",
+    category: "Full-Stack Web",
+    type: "Academic Project",
+    timeline: "2026",
+    featured: true,
+    description:
+      "Hotel front-desk, cashier and restaurant system with a guest-facing portal, QR-code passes, and multi-channel payment integrations.",
+    longDescription:
+      "Hotel Billing System is an integrated hospitality and restaurant management platform engineered with Next.js, PHP, MySQL, and WebSockets. It streamlines operational workflows between hotel front-desk staff, dining cashiers, and guests through automated QR-code passes, real-time folio bill calculation, role-based access control, and payment processing.",
+    features: [
+      "QR-code check-in pass that opens a private guest portal showing the live folio bill, dining orders and room service requests",
+      "Cashier workflow with approvals, VAT, discount policies, group check-in, and cash, card, GCash, Maya and QR Ph payments",
+      "Role-based permissions, audit trail and realtime staff notifications",
+    ],
+    technologies: ["Next.js", "PHP", "MySQL", "WebSocket", "QR Codes", "Tailwind CSS"],
+    metrics: "Real-time guest folio & cashier workflow engine",
+  },
+  {
     id: "cozier",
     title: "Cozier",
     tagline: "Minimalist E-Commerce Platform & Order Tracking Dashboard",
@@ -101,6 +121,26 @@ export const PROJECTS: Project[] = [
     metrics: "Instantaneous client-side cashiering and receipt engine",
   },
   {
+    id: "j-and-j-sublimation",
+    title: "J and J Full Sublimation Printing Ordering System",
+    tagline: "Apparel Ordering System & Production Workflow Tracking",
+    category: "Systems & Desktop",
+    type: "Academic Project",
+    timeline: "2025 – 2026",
+    featured: true,
+    description:
+      "Ordering system for a full sublimation apparel printing business that digitizes custom order intake and production tracking.",
+    longDescription:
+      "Engineered for J and J Full Sublimation Printing to replace manual paperwork with an end-to-end digital ordering and tracking workflow. Captures complex garment types, sizing matrices, print specifications, and monitors active jobs from intake through printing, pressing, and final release.",
+    features: [
+      "Online ordering of custom sublimated apparel, capturing garment type, sizes, quantities and design specifications",
+      "Order status tracking from submission through production to release for customers and staff",
+      "Administrative module for managing orders, customer records and print production workflow",
+    ],
+    technologies: ["Java", "Java GUI", "Systems Architecture", "File/Database Management"],
+    metrics: "Digitized full-lifecycle apparel order intake & tracking",
+  },
+  {
     id: "barangay-canitoan",
     title: "Barangay Canitoan Official Portal",
     tagline: "Civic Public Information Platform & Service Hub",
@@ -124,24 +164,23 @@ export const PROJECTS: Project[] = [
     metrics: "8 complete modules deployed live via Cloudflare Pages",
   },
   {
-    id: "apparel-ordering",
-    title: "Apparel Ordering & Management System",
-    tagline: "Desktop Tailoring & Printing Order Management Software",
-    category: "Systems & Desktop",
-    type: "Group Project",
-    timeline: "October 2025",
+    id: "jungle-slot-machine",
+    title: "Jungle Slot Machine",
+    tagline: "Interactive Game Application with Reel-Spinning Gameplay",
+    category: "Interactive & Logic",
+    type: "Game Application",
+    timeline: "2024",
     description:
-      "A desktop software solution engineered in Java to streamline customer custom garment orders, tailoring measurements, print specifications, and billing.",
+      "Jungle-themed slot machine game with an interactive, easy-to-use gameplay interface.",
     longDescription:
-      "Developed as a collaborative system development project, this desktop application replaces disorganized manual paperwork for bespoke tailoring and silkscreen/sublimation printing shops. It tracks customer measurements, material inventories, printing techniques, job completion stages, and automated balance invoicing.",
+      "An interactive gaming application featuring responsive reel-spinning mechanics, payout algorithms, and engaging jungle visual themes with intuitive user controls.",
     features: [
-      "Custom order intake forms capturing sizing matrices, fabric choices, and artwork details",
-      "Order lifecycle tracking from Intake to In-Production, Ready-for-Fitting, and Released",
-      "Automated total billing with downpayment and balance computations",
-      "Structured Java Swing interface built on strict Object-Oriented principles",
+      "Interactive reel-spinning gameplay with jungle-themed visuals",
+      "Dynamic bet scaling and reward payout calculations",
+      "Responsive, easy-to-use interface optimized for engagement",
     ],
-    technologies: ["Java", "Java Swing GUI", "OOP Architecture", "File I/O"],
-    metrics: "Comprehensive desktop order lifecycle management",
+    technologies: ["JavaScript / Python", "Game Logic Design", "Interactive UI"],
+    metrics: "Interactive reel-spinning gameplay with jungle visuals",
   },
   {
     id: "healthcare-system",

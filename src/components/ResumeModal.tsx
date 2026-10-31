@@ -112,28 +112,50 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Verified Projects */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(194,76,120)] border-b border-[#252525] pb-1">
-              FEATURED & VERIFIED PROJECTS
+              FEATURED &amp; VERIFIED PROJECTS
             </h2>
 
-            <div className="space-y-4">
-              {PROJECTS.slice(0, 5).map((project) => (
-                <div key={project.id} className="space-y-1.5 border-l-2 border-l-[rgb(165,56,96)] pl-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-                    <span className="font-bold text-white text-[11px]">
-                      {project.title} — {project.tagline}
+            <div className="space-y-5">
+              {PROJECTS.map((project) => (
+                <div key={project.id} className="space-y-1.5 border-l-2 border-l-[rgb(165,56,96)] pl-3.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <span className="font-bold text-white text-[12px] uppercase tracking-wide">
+                      {project.title}
                     </span>
-                    <span className="text-[10px] text-neutral-400">
+                    <span className="text-[10px] text-neutral-400 font-mono">
                       {project.type} | {project.timeline}
                     </span>
                   </div>
+
+                  <p className="text-[10px] text-[rgb(194,76,120)] font-semibold uppercase tracking-wider">
+                    {project.tagline}
+                  </p>
+
                   <p className="text-[11px] text-neutral-300 leading-relaxed">
                     {project.description}
                   </p>
-                  <p className="text-[10px] text-neutral-400">
+
+                  {/* Bulleted Highlights */}
+                  {project.features && project.features.length > 0 && (
+                    <ul className="space-y-1 pt-1">
+                      {project.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="text-[10px] text-neutral-400 flex items-start gap-1.5 leading-relaxed">
+                          <span className="text-[rgb(165,56,96)] mt-0.5">•</span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <p className="text-[10px] text-neutral-400 pt-1">
                     <span className="text-neutral-300 font-semibold">Technologies:</span> {project.technologies.join(", ")}
-                    {project.githubUrl && ` • Repo: ${project.githubUrl}`}
+                    {project.githubUrl && (
+                      <span className="text-neutral-400">
+                        {" "}• <span className="text-neutral-300 font-semibold">GitHub:</span> {project.githubUrl}
+                      </span>
+                    )}
                   </p>
                 </div>
               ))}
@@ -147,24 +169,24 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[10px]">
               <div>
-                <span className="font-bold text-white block">Programming Languages:</span>
+                <span className="font-bold text-white block">Programming & Core Tech:</span>
                 <span className="text-neutral-300">Python, Java, JavaScript (ES6+), PHP, HTML5, CSS3</span>
               </div>
               <div>
-                <span className="font-bold text-white block">Frontend & UI Design:</span>
-                <span className="text-neutral-300">Responsive Layouts, Tailwind CSS, Modern Grid & Flexbox, Glassmorphism, Canva, Figma</span>
+                <span className="font-bold text-white block">Frontend & Web Frameworks:</span>
+                <span className="text-neutral-300">Next.js, React, Tailwind CSS, Bootstrap, Responsive Layouts, Glassmorphism UI</span>
               </div>
               <div>
-                <span className="font-bold text-white block">Systems & Desktop Development:</span>
-                <span className="text-neutral-300">Java Swing GUI, OOP Principles, Systems Analysis & Design, Modular Architecture</span>
+                <span className="font-bold text-white block">Systems & Architecture:</span>
+                <span className="text-neutral-300">Java Swing GUI, OOP Principles, Systems Analysis & Design, WebSocket, QR Codes</span>
               </div>
               <div>
-                <span className="font-bold text-white block">Backend, Cloud & Data:</span>
-                <span className="text-neutral-300">Cloudflare Pages, Cloudflare Workers & KV, REST APIs, Web Storage API, MySQL Concepts</span>
+                <span className="font-bold text-white block">Databases & Cloud:</span>
+                <span className="text-neutral-300">MySQL, Cloudflare Pages & KV, REST APIs, Web Storage API</span>
               </div>
               <div className="sm:col-span-2">
-                <span className="font-bold text-white block">Workflow & Professional Skills:</span>
-                <span className="text-neutral-300">Git/GitHub Version Control, VS Code, Technical Documentation, Teamwork, Adaptability</span>
+                <span className="font-bold text-white block">Tools & Professional Skills:</span>
+                <span className="text-neutral-300">Git/GitHub Version Control, VS Code, Problem Solving, Teamwork, Adaptability</span>
               </div>
             </div>
           </div>
