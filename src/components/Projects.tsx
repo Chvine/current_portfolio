@@ -34,13 +34,7 @@ export default function Projects() {
               </span>
             </h2>
           </div>
-          <div className="text-xs font-mono text-[#A0A0A0] max-w-sm uppercase space-y-1">
-            <p>// Inspected from GitHub @Chvine & academic deliverables.</p>
-            <p className="text-white flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-[rgb(165,56,96)]" />
-              Total catalog: {PROJECTS.length} verified projects.
-            </p>
-          </div>
+
         </div>
 
         {/* Filter Navigation */}

@@ -25,9 +25,7 @@ export default function Skills() {
               </span>
             </h2>
           </div>
-          <p className="text-xs font-mono text-[#A0A0A0] max-w-xs uppercase">
-            // Categorized by demonstrated projects and academic coursework. Zero fabricated proficiencies.
-          </p>
+
         </div>
 
         {/* Category Filter Tabs */}
