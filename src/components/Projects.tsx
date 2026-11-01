@@ -9,7 +9,7 @@ export default function Projects() {
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
-  const filters = ["All", "Full-Stack Web", "Systems & Desktop", "Civic & Community", "Interactive & Logic"];
+  const filters = ["All", "Full-Stack Web", "Systems & Desktop", "Civic & Community", "Interactive & Logic", "Mobile Application"];
 
   const filteredProjects = selectedFilter === "All"
     ? PROJECTS

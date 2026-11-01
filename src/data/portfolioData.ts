@@ -2,8 +2,8 @@ export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: "Full-Stack Web" | "Systems & Desktop" | "Civic & Community" | "Interactive & Logic";
-  type: "Individual Project" | "Group Project" | "Mini-Project" | "Academic Project" | "Game Application";
+  category: "Full-Stack Web" | "Systems & Desktop" | "Civic & Community" | "Interactive & Logic" | "Mobile Application";
+  type: "Individual Project" | "Group Project" | "Mini-Project" | "Academic Project" | "Game Application" | "Personal Project" | "Client-given Project";
   timeline: string;
   description: string;
   longDescription: string;
@@ -282,6 +282,25 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ["Java", "Java GUI / Swing", "Financial Calculation Logic", "Data Modeling"],
     metrics: "Financial amortization calculations and borrower ledger",
+  },
+  {
+    id: "covid19-tracker",
+    title: "COVID-19 Tracker Mobile App for Android",
+    tagline: "Real-Time National & Global COVID-19 Case Monitoring App",
+    category: "Mobile Application",
+    type: "Personal Project",
+    timeline: "April – October 2020",
+    description:
+      "Designed, developed, and published an Android app to track COVID-19 cases nationally and globally, downloaded by more than 1,000 users as of October 2021.",
+    longDescription:
+      "A fully published Android mobile application designed to help users stay informed during the COVID-19 pandemic. The app consumes a live REST API via the Volley library to display real-time statistics, featuring customizable date-based filtering and clear visual presentation of case data. Achieved organic downloads of over 1,000 users on the Google Play Store.",
+    features: [
+      "Monitors and displays total number of cases, active cases, deaths, recoveries, cases under critical condition, fatality rate, and recovery rate at any given date",
+      "Customizable display data based on filters set by the users",
+      "Downloaded by more than 1,000 users as of October 2021",
+    ],
+    technologies: ["Android", "Java", "Adobe XD", "Android Studio", "Git", "REST APIs", "Volley"],
+    metrics: "1,000+ downloads on Google Play Store",
   },
   {
     id: "braingle-game",
