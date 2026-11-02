@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowDownRight, Download, Mail, MapPin, Terminal, Code2, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PERSONAL_INFO } from "@/data/portfolioData";
@@ -142,31 +141,10 @@ export default function Hero({ onOpenResume }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Interactive 3D Lanyard & Developer Pass (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            <div className="relative w-full max-w-md">
-              {/* Decorative Corner Accents */}
-              <div className="absolute -top-3 -left-3 h-6 w-6 border-t-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
-              <div className="absolute -top-3 -right-3 h-6 w-6 border-t-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
-              <div className="absolute -bottom-3 -left-3 h-6 w-6 border-b-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
-              <div className="absolute -bottom-3 -right-3 h-6 w-6 border-b-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
-
-              {/* Interactive Physics Lanyard Container */}
-              <div className="relative rounded-2xl border border-[#292929] bg-[#0D0D0D]/90 p-2 shadow-2xl backdrop-blur-md overflow-hidden">
-                <InteractiveLanyard />
-
-                {/* Sub-card details */}
-                <div className="mt-2 grid grid-cols-2 gap-2 text-center text-[11px] font-mono px-2 pb-2">
-                  <div className="rounded-lg border border-[#292929] bg-[#111111] py-2 px-1 hover:border-[rgb(165,56,96)]/60 transition-colors">
-                    <span className="block text-neutral-400 text-[10px]">CAMPUS</span>
-                    <span className="text-white font-medium">PHINMA COC</span>
-                  </div>
-                  <div className="rounded-lg border border-[#292929] bg-[#111111] py-2 px-1 hover:border-[rgb(165,56,96)]/60 transition-colors">
-                    <span className="block text-neutral-400 text-[10px]">ACTIVE FOCUS</span>
-                    <span className="text-white font-medium">Full-Stack & Systems</span>
-                  </div>
-                </div>
-              </div>
+          {/* Right Column: Floating Interactive Lanyard ID (5 cols) - Transparent, only ID visible */}
+          <div className="lg:col-span-5 flex items-center justify-center relative">
+            <div className="w-full max-w-md flex justify-center">
+              <InteractiveLanyard />
             </div>
           </div>
         </div>
