@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { ShieldCheck, QrCode, Cpu } from "lucide-react";
+import { ShieldCheck, QrCode } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
 interface VerletPoint {
@@ -412,15 +412,23 @@ export default function InteractiveLanyard() {
 
             {/* Smart Chip & Telemetry */}
             <div className="flex-1 space-y-1.5 text-left">
-              {/* Gold Smart Chip Simulation */}
-              <div className="w-9 h-7 rounded border border-amber-500/60 bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-inner relative flex items-center justify-center p-0.5 mb-1">
-                <div className="w-full h-full border border-amber-900/40 rounded-[2px] grid grid-cols-2 gap-0.5 opacity-80">
-                  <div className="border-r border-b border-amber-900/40" />
-                  <div className="border-b border-amber-900/40" />
-                  <div className="border-r border-amber-900/40" />
-                  <div />
+              {/* Black & Pink Monogram Chip with SJ Initials */}
+              <div className="w-10 h-7 rounded-md border border-[rgb(165,56,96)]/80 bg-gradient-to-br from-[#1A1A1A] via-[#101010] to-[#080808] shadow-[0_0_12px_rgba(165,56,96,0.35)] relative flex items-center justify-center p-0.5 mb-1 overflow-hidden group/chip">
+                {/* Circuit background traces in pink */}
+                <div className="absolute inset-0 opacity-25 pointer-events-none">
+                  <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[rgb(194,76,120)]" />
+                  <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-[rgb(194,76,120)]" />
                 </div>
-                <Cpu className="absolute h-3 w-3 text-amber-950/70" />
+                {/* Micro corner solder pads */}
+                <div className="absolute top-0.5 left-0.5 h-1 w-1 rounded-full bg-[rgb(165,56,96)]" />
+                <div className="absolute top-0.5 right-0.5 h-1 w-1 rounded-full bg-[rgb(165,56,96)]" />
+                <div className="absolute bottom-0.5 left-0.5 h-1 w-1 rounded-full bg-[rgb(165,56,96)]" />
+                <div className="absolute bottom-0.5 right-0.5 h-1 w-1 rounded-full bg-[rgb(165,56,96)]" />
+
+                {/* Bold SJ Initials in Pink & White */}
+                <span className="relative z-10 font-mono font-black text-xs tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-[rgb(214,96,140)] to-[rgb(165,56,96)] drop-shadow-[0_0_6px_rgba(165,56,96,0.6)]">
+                  SJ
+                </span>
               </div>
 
               <div className="space-y-0.5">
