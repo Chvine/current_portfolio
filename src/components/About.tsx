@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { CheckCircle2, Code, Compass, GraduationCap, Laptop, Sparkles, Terminal } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
+import SpiderCursorMask from "@/components/SpiderCursorMask";
 
 export default function About() {
   const highlights = [
@@ -125,33 +125,10 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Editorial Profile & Info Sheet (5 cols) */}
+          {/* Right Column: Interactive Spider-Man Cursor Mask & Info Sheet (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Visual Portrait Frame */}
-            <div className="relative rounded-2xl border border-[#292929] bg-[#111111] p-4 shadow-xl overflow-hidden group transition-all duration-500 hover:border-[rgb(165,56,96)]/70 hover:shadow-[0_0_30px_rgba(165,56,96,0.2)]">
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#0A0A0A]">
-                <Image
-                  src="/profile.jpg"
-                  alt="Sharmaine A. Jacob Portrait"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover object-top filter grayscale contrast-110 brightness-95 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
-
-                <div className="absolute bottom-4 left-4 right-4 border-l-2 border-l-[rgb(165,56,96)] pl-3">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[rgb(194,76,120)] block mb-1">
-                    CANDIDATE PROFILE
-                  </span>
-                  <p className="text-lg font-bold text-white tracking-tight">
-                    Sharmaine A. Jacob
-                  </p>
-                  <p className="text-xs text-neutral-300">
-                    Cagayan de Oro City, Northern Mindanao
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Interactive Spider-Man Cyber Web Cursor Mask */}
+            <SpiderCursorMask />
 
             {/* Verification & Details Dossier */}
             <div className="rounded-2xl border border-[#292929] bg-[#0E0E0E] p-6 space-y-4">

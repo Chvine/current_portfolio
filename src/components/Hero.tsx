@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowDownRight, Download, Mail, MapPin, Terminal, Code2, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { PERSONAL_INFO } from "@/data/portfolioData";
+import InteractiveLanyard from "@/components/InteractiveLanyard";
 
 interface HeroProps {
   onOpenResume?: () => void;
@@ -141,51 +142,26 @@ export default function Hero({ onOpenResume }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Editorial Portrait (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          {/* Right Column: Interactive 3D Lanyard & Developer Pass (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center">
             <div className="relative w-full max-w-md">
               {/* Decorative Corner Accents */}
-              <div className="absolute -top-3 -left-3 h-6 w-6 border-t-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-20" />
-              <div className="absolute -top-3 -right-3 h-6 w-6 border-t-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-20" />
-              <div className="absolute -bottom-3 -left-3 h-6 w-6 border-b-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-20" />
-              <div className="absolute -bottom-3 -right-3 h-6 w-6 border-b-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-20" />
+              <div className="absolute -top-3 -left-3 h-6 w-6 border-t-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
+              <div className="absolute -top-3 -right-3 h-6 w-6 border-t-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
+              <div className="absolute -bottom-3 -left-3 h-6 w-6 border-b-2 border-l-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
+              <div className="absolute -bottom-3 -right-3 h-6 w-6 border-b-2 border-r-2 border-[rgb(165,56,96)] pointer-events-none z-30" />
 
-              {/* Card Container */}
-              <div className="relative group rounded-xl border border-[#292929] bg-[#111111] p-3 shadow-2xl transition-all duration-500 hover:border-[rgb(165,56,96)]/80 hover:shadow-[0_0_35px_rgba(165,56,96,0.25)]">
-                {/* Image Frame */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-[#0C0C0C]">
-                  <Image
-                    src="/profile.jpg"
-                    alt="Sharmaine A. Jacob — Information Technology Student & Software Developer"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 420px"
-                    className="object-cover object-top filter grayscale contrast-110 brightness-95 transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
-                  />
-                  {/* Subtle gradient vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/85 via-transparent to-transparent pointer-events-none" />
-
-                  {/* On-image badge */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-lg border border-[#292929]/80 border-l-2 border-l-[rgb(165,56,96)] bg-[#0A0A0A]/90 px-3.5 py-2.5 backdrop-blur-md">
-                    <div>
-                      <p className="text-xs font-semibold text-white tracking-wide">
-                        Sharmaine A. Jacob
-                      </p>
-                      <p className="text-[10px] font-mono text-neutral-400">
-                        BSIT • <span className="text-[rgb(194,76,120)]">System Development</span>
-                      </p>
-                    </div>
-                    <span className="flex h-2 w-2 rounded-full bg-[rgb(165,56,96)] shadow-[0_0_8px_rgba(165,56,96,0.9)]" />
-                  </div>
-                </div>
+              {/* Interactive Physics Lanyard Container */}
+              <div className="relative rounded-2xl border border-[#292929] bg-[#0D0D0D]/90 p-2 shadow-2xl backdrop-blur-md overflow-hidden">
+                <InteractiveLanyard />
 
                 {/* Sub-card details */}
-                <div className="mt-3 grid grid-cols-2 gap-2 text-center text-[11px] font-mono">
-                  <div className="rounded border border-[#292929] bg-[#0E0E0E] py-2 px-1 hover:border-[rgb(165,56,96)]/40 transition-colors">
+                <div className="mt-2 grid grid-cols-2 gap-2 text-center text-[11px] font-mono px-2 pb-2">
+                  <div className="rounded-lg border border-[#292929] bg-[#111111] py-2 px-1 hover:border-[rgb(165,56,96)]/60 transition-colors">
                     <span className="block text-neutral-400 text-[10px]">CAMPUS</span>
                     <span className="text-white font-medium">PHINMA COC</span>
                   </div>
-                  <div className="rounded border border-[#292929] bg-[#0E0E0E] py-2 px-1 hover:border-[rgb(165,56,96)]/40 transition-colors">
+                  <div className="rounded-lg border border-[#292929] bg-[#111111] py-2 px-1 hover:border-[rgb(165,56,96)]/60 transition-colors">
                     <span className="block text-neutral-400 text-[10px]">ACTIVE FOCUS</span>
                     <span className="text-white font-medium">Full-Stack & Systems</span>
                   </div>
