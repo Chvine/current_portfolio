@@ -10,6 +10,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ResumeModal from "@/components/ResumeModal";
@@ -45,6 +46,9 @@ export default function Home() {
 
       {/* Education Timeline */}
       <Education />
+
+      {/* Certifications Album */}
+      <Certifications />
 
       {/* Contact Section */}
       <Contact />

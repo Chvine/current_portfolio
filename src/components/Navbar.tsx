@@ -20,6 +20,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
     { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Education", href: "#education", id: "education" },
+    { name: "Certifications", href: "#certifications", id: "certifications" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 

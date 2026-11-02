@@ -25,6 +25,21 @@ export interface SkillCategory {
   }[];
 }
 
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  issueDate: string;
+  credentialLevel: string;
+  image: string;
+  pdfUrl?: string;
+  signatory: string;
+  skills: string[];
+  description: string;
+  verified: boolean;
+  category: string;
+}
+
 export const PERSONAL_INFO = {
   name: "Sharmaine A. Jacob",
   nickname: "Sharmaine",
@@ -414,5 +429,29 @@ export const EDUCATION_TIMELINE = [
       "Consistently building real-world group systems and community web portals",
       "Active team player in academic system design presentations and defense",
     ],
+  },
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: "cisco-os-basics",
+    title: "Operating Systems Basics",
+    issuer: "Cisco Networking Academy",
+    issueDate: "November 02, 2026",
+    credentialLevel: "Student Level Credential",
+    image: "/cisco-os-basics.png",
+    pdfUrl: "/cisco-os-basics.pdf",
+    signatory: "Lynn Bloomer, Director, Cisco Networking Academy",
+    skills: [
+      "Windows Architecture & Admin Tools",
+      "Linux Shell & Command Line",
+      "Process & Service Monitoring",
+      "Linux System Security",
+      "Mobile Operating Systems & Networking",
+    ],
+    description:
+      "Certificate of Course Completion awarded by Cisco Networking Academy verifying proficiency in Windows operating system architecture, Windows administrative configuration, Linux shell text manipulation, service and log monitoring, fundamental Linux security, and mobile OS networking configuration.",
+    verified: true,
+    category: "Operating Systems & Networking",
   },
 ];

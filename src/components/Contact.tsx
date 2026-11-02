@@ -67,7 +67,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="space-y-3 mb-16">
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#A0A0A0]">
-            <span className="text-[rgb(165,56,96)] font-bold">05 //</span> GET IN TOUCH
+            <span className="text-[rgb(165,56,96)] font-bold">06 //</span> GET IN TOUCH
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
             LET&apos;S BUILD SOMETHING <br />

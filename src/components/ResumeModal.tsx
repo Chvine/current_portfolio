@@ -1,7 +1,9 @@
 "use client";
 
-import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES, EDUCATION_TIMELINE } from "@/data/portfolioData";
-import { X, Printer, Download, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import { X, Download, ExternalLink, FileText, Printer, CheckCircle2, ChevronRight, Eye } from "lucide-react";
+import { PERSONAL_INFO } from "@/data/portfolioData";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -9,187 +11,165 @@ interface ResumeModalProps {
 }
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  const [viewMode, setViewMode] = useState<"pages" | "pdf">("pages");
+
   if (!isOpen) return null;
 
+  const cvPdfUrl = "/Sharmaine_Jacob_CV.pdf";
+
   const handlePrint = () => {
-    window.print();
+    window.open(cvPdfUrl, "_blank");
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl border border-[rgb(165,56,96)]/60 bg-[#0F0F0F] shadow-[0_0_50px_rgba(165,56,96,0.22)] z-10 overflow-hidden">
+      <div className="relative w-full max-w-4xl max-h-[94vh] flex flex-col rounded-2xl border border-[rgb(165,56,96)]/60 bg-[#0E0E0E] shadow-[0_0_60px_rgba(165,56,96,0.25)] z-10 overflow-hidden">
         {/* Top Control Bar */}
-        <div className="flex items-center justify-between border-b border-[#252525] px-6 py-4 bg-[#141414] shrink-0">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#252525] px-4 sm:px-6 py-3.5 bg-[#141414] shrink-0">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-white">
-              CURRICULUM VITAE PREVIEW
-            </span>
-            <span className="text-[10px] font-mono text-[rgb(194,76,120)] bg-[rgb(165,56,96)]/15 px-2.5 py-0.5 rounded border border-[rgb(165,56,96)]/40 flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
+              <FileText className="h-4 w-4 text-[rgb(194,76,120)]" />
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-white">
+                CURRICULUM VITAE
+              </span>
+            </div>
+            <span className="text-[10px] font-mono text-[rgb(194,76,120)] bg-[rgb(165,56,96)]/15 px-2.5 py-0.5 rounded border border-[rgb(165,56,96)]/40 hidden sm:inline-flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[rgb(165,56,96)]" />
-              VERIFIED 2026
+              ORIGINAL PDF • 2 PAGES
             </span>
           </div>
 
+          {/* Actions & Controls */}
           <div className="flex items-center gap-2">
+            {/* View Mode Toggle (Desktop only) */}
+            <div className="hidden md:flex items-center rounded-lg border border-[#2A2A2A] bg-[#0A0A0A] p-0.5 text-[11px] font-mono">
+              <button
+                onClick={() => setViewMode("pages")}
+                className={`px-3 py-1 rounded-md transition-colors ${
+                  viewMode === "pages"
+                    ? "bg-[rgb(165,56,96)] text-white font-semibold"
+                    : "text-neutral-400 hover:text-white"
+                }`}
+              >
+                Page View
+              </button>
+              <button
+                onClick={() => setViewMode("pdf")}
+                className={`px-3 py-1 rounded-md transition-colors ${
+                  viewMode === "pdf"
+                    ? "bg-[rgb(165,56,96)] text-white font-semibold"
+                    : "text-neutral-400 hover:text-white"
+                }`}
+              >
+                PDF Embed
+              </button>
+            </div>
+
+            {/* Download Button */}
+            <a
+              href={cvPdfUrl}
+              download="Sharmaine_Jacob_CV.pdf"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-1.5 text-xs font-mono font-bold uppercase text-black hover:bg-neutral-100 hover:shadow-[0_0_15px_rgba(165,56,96,0.3)] transition-all"
+              title="Download Original PDF"
+            >
+              <Download className="h-3.5 w-3.5 text-[rgb(165,56,96)]" />
+              <span className="hidden sm:inline">Download</span> PDF
+            </a>
+
+            {/* Open in New Window */}
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-white px-4 py-2 text-xs font-mono font-bold uppercase text-black hover:bg-neutral-100 hover:border-[rgb(165,56,96)] hover:shadow-[0_0_15px_rgba(165,56,96,0.3)] transition-all"
-              title="Print or Save as PDF"
+              className="p-1.5 sm:px-3 sm:py-1.5 inline-flex items-center gap-1 rounded-lg border border-[#292929] bg-[#1A1A1A] text-xs font-mono text-neutral-300 hover:text-white hover:border-[rgb(165,56,96)] transition-colors"
+              title="Open PDF in new tab"
             >
-              <Printer className="h-3.5 w-3.5 text-[rgb(165,56,96)]" />
-              <span>Print / PDF</span>
+              <ExternalLink className="h-3.5 w-3.5 text-neutral-400" />
+              <span className="hidden sm:inline">Open</span>
             </button>
+
+            {/* Close Button */}
             <button
               onClick={onClose}
-              className="p-2 rounded-lg border border-[#292929] bg-[#1A1A1A] text-neutral-400 hover:text-white hover:border-[rgb(165,56,96)] transition-colors"
+              className="p-1.5 rounded-lg border border-[#292929] bg-[#1A1A1A] text-neutral-400 hover:text-white hover:border-[rgb(165,56,96)] transition-colors"
+              aria-label="Close CV Preview"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        {/* Scrollable Printable Document */}
-        <div className="overflow-y-auto p-6 sm:p-10 space-y-8 bg-[#0B0B0B] text-white font-mono text-xs selection:bg-white selection:text-black print:bg-white print:text-black">
-          {/* Header */}
-          <div className="border-b-2 border-white pb-6 space-y-3">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
-                  {PERSONAL_INFO.name}
-                </h1>
-                <p className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mt-0.5">
-                  {PERSONAL_INFO.title}
-                </p>
-                <p className="text-[11px] text-neutral-400">
-                  Track Specialization: <span className="text-[rgb(194,76,120)]">{PERSONAL_INFO.specialization}</span>
-                </p>
-              </div>
-
-              <div className="space-y-1 text-right text-[11px] text-neutral-300">
-                <p>{PERSONAL_INFO.location}</p>
-                <p>{PERSONAL_INFO.email}</p>
-                <p>{PERSONAL_INFO.phone}</p>
-                <p>
-                  GitHub: {PERSONAL_INFO.github} • LinkedIn: {PERSONAL_INFO.linkedin}
-                </p>
-              </div>
+        {/* Content Viewer */}
+        <div className="flex-1 overflow-y-auto bg-[#080808] p-3 sm:p-6 md:p-8">
+          {viewMode === "pdf" ? (
+            /* Native PDF embed iframe */
+            <div className="w-full h-[78vh] rounded-xl overflow-hidden border border-[#292929] bg-[#111111]">
+              <iframe
+                src={`${cvPdfUrl}#toolbar=1&navpanes=0`}
+                className="w-full h-full border-0"
+                title="Sharmaine Jacob CV PDF"
+              />
             </div>
-          </div>
-
-          {/* Professional Summary */}
-          <div className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(194,76,120)] border-b border-[#252525] pb-1">
-              PROFESSIONAL SUMMARY
-            </h2>
-            <p className="text-neutral-300 leading-relaxed text-[11px]">
-              Bachelor of Science in Information Technology student at PHINMA Cagayan de Oro College, specializing in System Development. Proficient in Python, Java, JavaScript, HTML, PHP, CSS, React, and Next.js, with hands-on experience in MySQL database management and Bootstrap responsive UI design. Proven developer of academic systems including a riddle game, lending management system, healthcare appointment system, and apparel ordering system. Focused on building practical, innovative systems and continuously expanding software engineering capabilities.
-            </p>
-          </div>
-
-          {/* Education */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(194,76,120)] border-b border-[#252525] pb-1">
-              EDUCATION
-            </h2>
-            <div className="space-y-1">
-              <div className="flex justify-between font-bold text-white text-[11px]">
-                <span>PHINMA EDUCATION – CAGAYAN DE ORO COLLEGE</span>
-                <span>{EDUCATION_TIMELINE[0].period}</span>
-              </div>
-              <div className="flex justify-between text-neutral-300 text-[11px]">
-                <span>Bachelor of Science in Information Technology (BSIT)</span>
-                <span className="text-[rgb(194,76,120)]">Ongoing (Active Candidate)</span>
-              </div>
-              <p className="text-neutral-400 text-[10px]">
-                Specialization: System Development • Cagayan de Oro City, Misamis Oriental, PH
-              </p>
-              <p className="text-neutral-300 text-[10px] pt-1">
-                Relevant Coursework: Advanced Programming, Data Structures & Algorithms, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Systems Analysis & Design, Web Systems & Technologies.
-              </p>
-            </div>
-          </div>
-
-          {/* Verified Projects */}
-          <div className="space-y-5">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(194,76,120)] border-b border-[#252525] pb-1">
-              FEATURED &amp; VERIFIED PROJECTS
-            </h2>
-
-            <div className="space-y-5">
-              {PROJECTS.map((project) => (
-                <div key={project.id} className="space-y-1.5 border-l-2 border-l-[rgb(165,56,96)] pl-3.5">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <span className="font-bold text-white text-[12px] uppercase tracking-wide">
-                      {project.title}
-                    </span>
-                    <span className="text-[10px] text-neutral-400 font-mono">
-                      {project.type} | {project.timeline}
-                    </span>
-                  </div>
-
-                  <p className="text-[10px] text-[rgb(194,76,120)] font-semibold uppercase tracking-wider">
-                    {project.tagline}
-                  </p>
-
-                  <p className="text-[11px] text-neutral-300 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Bulleted Highlights */}
-                  {project.features && project.features.length > 0 && (
-                    <ul className="space-y-1 pt-1">
-                      {project.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="text-[10px] text-neutral-400 flex items-start gap-1.5 leading-relaxed">
-                          <span className="text-[rgb(165,56,96)] mt-0.5">•</span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  <p className="text-[10px] text-neutral-400 pt-1">
-                    <span className="text-neutral-300 font-semibold">Technologies:</span> {project.technologies.join(", ")}
-                    {project.githubUrl && (
-                      <span className="text-neutral-400">
-                        {" "}• <span className="text-neutral-300 font-semibold">GitHub:</span> {project.githubUrl}
-                      </span>
-                    )}
-                  </p>
+          ) : (
+            /* High-fidelity rendered PDF pages */
+            <div className="max-w-3xl mx-auto space-y-8">
+              {/* Page 1 */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 px-1">
+                  <span className="flex items-center gap-1.5 text-white font-medium">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[rgb(165,56,96)]" />
+                    PAGE 01 — PROFILE SUMMARY, EDUCATION, CERTIFICATION &amp; PROJECTS
+                  </span>
+                  <span>1 OF 2</span>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Technical Skills Matrix */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-[rgb(194,76,120)] border-b border-[#252525] pb-1">
-              TECHNICAL SKILLS MATRIX
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[10px]">
-              <div>
-                <span className="font-bold text-white block">Programming & Core Tech:</span>
-                <span className="text-neutral-300">Python, Java, JavaScript (ES6+), PHP, Dart, HTML5, CSS3</span>
+                <div className="relative rounded-xl overflow-hidden border border-[#2D2D2D] bg-white shadow-2xl transition-all duration-300 hover:border-[rgb(165,56,96)]/60">
+                  <Image
+                    src="/cv-page-1.png"
+                    alt="Sharmaine A. Jacob Curriculum Vitae - Page 1"
+                    width={1600}
+                    height={2263}
+                    priority
+                    className="w-full h-auto block select-none"
+                  />
+                </div>
               </div>
-              <div>
-                <span className="font-bold text-white block">Frontend & Mobile Frameworks:</span>
-                <span className="text-neutral-300">Next.js, React, Flutter, Tailwind CSS, Bootstrap, Responsive Layouts, Glassmorphism UI</span>
+
+              {/* Page 2 */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 px-1">
+                  <span className="flex items-center gap-1.5 text-white font-medium">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[rgb(165,56,96)]" />
+                    PAGE 02 — FEATURED PROJECTS CONTINUED
+                  </span>
+                  <span>2 OF 2</span>
+                </div>
+
+                <div className="relative rounded-xl overflow-hidden border border-[#2D2D2D] bg-white shadow-2xl transition-all duration-300 hover:border-[rgb(165,56,96)]/60">
+                  <Image
+                    src="/cv-page-2.png"
+                    alt="Sharmaine A. Jacob Curriculum Vitae - Page 2"
+                    width={1600}
+                    height={2263}
+                    className="w-full h-auto block select-none"
+                  />
+                </div>
               </div>
-              <div>
-                <span className="font-bold text-white block">Systems & Architecture:</span>
-                <span className="text-neutral-300">Java Swing GUI, OOP Principles, Systems Analysis & Design, WebSocket, QR Codes</span>
-              </div>
-              <div>
-                <span className="font-bold text-white block">Databases & Cloud:</span>
-                <span className="text-neutral-300">MySQL, Cloudflare Pages & KV, REST APIs, Web Storage API</span>
-              </div>
-              <div className="sm:col-span-2">
-                <span className="font-bold text-white block">Tools & Professional Skills:</span>
-                <span className="text-neutral-300">Git/GitHub Version Control, VS Code, Problem Solving, Teamwork, Adaptability</span>
+
+              {/* Footer action pill */}
+              <div className="pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#222222] text-xs font-mono text-neutral-400">
+                <span>Sharmaine A. Jacob • Official Curriculum Vitae</span>
+                <a
+                  href={cvPdfUrl}
+                  download="Sharmaine_Jacob_CV.pdf"
+                  className="inline-flex items-center gap-2 text-white hover:text-[rgb(194,76,120)] transition-colors underline underline-offset-4"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Download Complete PDF File (2 Pages)
+                </a>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
